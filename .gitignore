@@ -1,0 +1,11 @@
+__pycache__
+sampleOutput.json
+*.pem
+test.sh
+*.lock.hcl
+*.backup
+*.tfstate
+.terraform
+*.jpg
+*.pdf
+*.info

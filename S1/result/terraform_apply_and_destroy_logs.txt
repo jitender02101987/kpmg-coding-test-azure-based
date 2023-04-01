@@ -1,0 +1,1159 @@
+                         
+PS C:\Users\Jitender\Documents\KGS-coding-challenge-main\S1> ..\..\terraform.exe apply --var="mysql_db_pass=Jiten@1987" --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"] will be created
+  + resource "azurerm_linux_virtual_machine" "virtual_machines" {
+      + admin_username                  = "kpmguser"
+      + allow_extension_operations      = true
+      + computer_name                   = (known after apply)
+      + disable_password_authentication = true
+      + extensions_time_budget          = "PT1H30M"
+      + id                              = (known after apply)
+      + location                        = "eastus"
+      + max_bid_price                   = -1
+      + name                            = "kpmgquestion1-dev-appvm-tf"
+      + network_interface_ids           = (known after apply)
+      + patch_mode                      = "ImageDefault"
+      + platform_fault_domain           = -1
+      + priority                        = "Regular"
+      + private_ip_address              = (known after apply)
+      + private_ip_addresses            = (known after apply)
+      + provision_vm_agent              = true
+      + public_ip_address               = (known after apply)
+      + public_ip_addresses             = (known after apply)
+      + resource_group_name             = "kpmgquestion1-dev-rg-tf"
+      + size                            = "Standard_F2"
+      + virtual_machine_id              = (known after apply)
+
+      + admin_ssh_key {
+          + public_key = <<-EOT
+                ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAH86pAk0H+ZI71VoYoMwQ1PYJzeCho8UyJWoVilmhYZgOYRKWIH1WQusPIsqXd82/UBJ2+hQabh1FWgM0mbLjQVRM+PhQ8SwaVDOMlIAyQgARt7vUD4+VjMAm4MXn5lbOStxTbxLi39XIQIvncu/qnNqGGQgZA2Y5VWtztUsx4F0nEUIjrA4lZFAqsHJetrxfL1F0hqi6fhD+l24y++wgC89W0Oox6LC22BB1Q4XWAdTDhqllR1HObnmIEULi4DkjT5ntrfws3of9k2tKJI7eQ8RTqOol84uzKImDCS3CraHGiKdpv49IyRlGUg5jhvmwFNnLMvRmA6C8OGXvmcnwPoaGfobvGjccpAABcdyK62nH78lQObtjtr24Wgoz2FGxLiiFstOFPamkDhWcZfflmZSwGmIidE7M/OvOrePovn2EsPLSV1Te0VG/aQxLY78/MtvWvXOsAufAH0tf11hfMcjQjXTu9Qf7X7pc5TrJLMmvM/fug/CBqFPk07Rd/uM= ravi_prakash@Ravi
+            EOT
+          + username   = "kpmguser"
+        }
+
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = (known after apply)
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+
+      + source_image_reference {
+          + offer     = "UbuntuServer"
+          + publisher = "Canonical"
+          + sku       = "16.04-LTS"
+          + version   = "latest"
+        }
+    }
+
+  # module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"] will be created
+  + resource "azurerm_linux_virtual_machine" "virtual_machines" {
+      + admin_username                  = "kpmguser"
+      + allow_extension_operations      = true
+      + computer_name                   = (known after apply)
+      + disable_password_authentication = true
+      + extensions_time_budget          = "PT1H30M"
+      + id                              = (known after apply)
+      + location                        = "eastus"
+      + max_bid_price                   = -1
+      + name                            = "kpmgquestion1-dev-webvm-tf"
+      + network_interface_ids           = (known after apply)
+      + patch_mode                      = "ImageDefault"
+      + platform_fault_domain           = -1
+      + priority                        = "Regular"
+      + private_ip_address              = (known after apply)
+      + private_ip_addresses            = (known after apply)
+      + provision_vm_agent              = true
+      + public_ip_address               = (known after apply)
+      + public_ip_addresses             = (known after apply)
+      + resource_group_name             = "kpmgquestion1-dev-rg-tf"
+      + size                            = "Standard_F2"
+      + virtual_machine_id              = (known after apply)
+
+      + admin_ssh_key {
+          + public_key = <<-EOT
+                ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAH86pAk0H+ZI71VoYoMwQ1PYJzeCho8UyJWoVilmhYZgOYRKWIH1WQusPIsqXd82/UBJ2+hQabh1FWgM0mbLjQVRM+PhQ8SwaVDOMlIAyQgARt7vUD4+VjMAm4MXn5lbOStxTbxLi39XIQIvncu/qnNqGGQgZA2Y5VWtztUsx4F0nEUIjrA4lZFAqsHJetrxfL1F0hqi6fhD+l24y++wgC89W0Oox6LC22BB1Q4XWAdTDhqllR1HObnmIEULi4DkjT5ntrfws3of9k2tKJI7eQ8RTqOol84uzKImDCS3CraHGiKdpv49IyRlGUg5jhvmwFNnLMvRmA6C8OGXvmcnwPoaGfobvGjccpAABcdyK62nH78lQObtjtr24Wgoz2FGxLiiFstOFPamkDhWcZfflmZSwGmIidE7M/OvOrePovn2EsPLSV1Te0VG/aQxLY78/MtvWvXOsAufAH0tf11hfMcjQjXTu9Qf7X7pc5TrJLMmvM/fug/CBqFPk07Rd/uM= ravi_prakash@Ravi
+            EOT
+          + username   = "kpmguser"
+        }
+
+      + os_disk {
+          + caching                   = "ReadWrite"
+          + disk_size_gb              = (known after apply)
+          + name                      = (known after apply)
+          + storage_account_type      = "Standard_LRS"
+          + write_accelerator_enabled = false
+        }
+
+      + source_image_reference {
+          + offer     = "UbuntuServer"
+          + publisher = "Canonical"
+          + sku       = "16.04-LTS"
+          + version   = "latest"
+        }
+    }
+
+  # module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"] will be created
+  + resource "azurerm_network_interface" "network_interface" {
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "kpmgquestion1-dev-appvm-tf-nic"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "kpmgquestion1-dev-rg-tf"
+      + virtual_machine_id            = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "app-server"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "Dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"] will be created
+  + resource "azurerm_network_interface" "network_interface" {
+      + applied_dns_servers           = (known after apply)
+      + dns_servers                   = (known after apply)
+      + enable_accelerated_networking = false
+      + enable_ip_forwarding          = false
+      + id                            = (known after apply)
+      + internal_dns_name_label       = (known after apply)
+      + internal_domain_name_suffix   = (known after apply)
+      + location                      = "eastus"
+      + mac_address                   = (known after apply)
+      + name                          = "kpmgquestion1-dev-webvm-tf-nic"
+      + private_ip_address            = (known after apply)
+      + private_ip_addresses          = (known after apply)
+      + resource_group_name           = "kpmgquestion1-dev-rg-tf"
+      + virtual_machine_id            = (known after apply)
+
+      + ip_configuration {
+          + gateway_load_balancer_frontend_ip_configuration_id = (known after apply)
+          + name                                               = "web-server"
+          + primary                                            = (known after apply)
+          + private_ip_address                                 = (known after apply)
+          + private_ip_address_allocation                      = "Dynamic"
+          + private_ip_address_version                         = "IPv4"
+          + public_ip_address_id                               = (known after apply)
+          + subnet_id                                          = (known after apply)
+        }
+    }
+
+  # module.database.azurerm_mysql_database.example will be created
+  + resource "azurerm_mysql_database" "example" {
+      + charset             = "utf8"
+      + collation           = "utf8_unicode_ci"
+      + id                  = (known after apply)
+      + name                = "kpmgquestion1-dev-mysqldb-tf"
+      + resource_group_name = "kpmgquestion1-dev-rg-tf"
+      + server_name         = "kpmgquestion1-dev-mysqldbserver-tf"
+    }
+
+  # module.database.azurerm_mysql_server.az_mysql_server will be created
+  + resource "azurerm_mysql_server" "az_mysql_server" {
+      + administrator_login              = "mysqladmin"
+      + administrator_login_password     = (sensitive value)
+      + auto_grow_enabled                = true
+      + backup_retention_days            = (known after apply)
+      + create_mode                      = "Default"
+      + fqdn                             = (known after apply)
+      + geo_redundant_backup_enabled     = (known after apply)
+      + id                               = (known after apply)
+      + location                         = "eastus"
+      + name                             = "kpmgquestion1-dev-mysqldbserver-tf"
+      + public_network_access_enabled    = true
+      + resource_group_name              = "kpmgquestion1-dev-rg-tf"
+      + sku_name                         = "B_Gen5_2"
+      + ssl_enforcement_enabled          = true
+      + ssl_minimal_tls_version_enforced = "TLS1_2"
+      + storage_mb                       = (known after apply)
+      + version                          = "5.7"
+    }
+
+  # module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"] will be created
+  + resource "azurerm_network_security_group" "security_groups" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "kpmgquestion1-dev-appnsg-tf"
+      + resource_group_name = "kpmgquestion1-dev-rg-tf"
+      + security_rule       = [
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.1.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Outbound"
+              + name                                       = "Allow-outbound-web-all"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.2.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.2.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "Allow-inbound-db-all"
+              + priority                                   = 101
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.3.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.2.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "Allow-inbound-web-all"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.1.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.3.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Outbound"
+              + name                                       = "Allow-outbound-db-all"
+              + priority                                   = 101
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.2.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+        ]
+    }
+
+  # module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"] will be created
+  + resource "azurerm_network_security_group" "security_groups" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "kpmgquestion1-dev-dbnsg-tf"
+      + resource_group_name = "kpmgquestion1-dev-rg-tf"
+      + security_rule       = [
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.2.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Outbound"
+              + name                                       = "Allow-outbound-app-all"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.3.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.3.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "Allow-inbound-app-all"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.2.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+        ]
+    }
+
+  # module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"] will be created
+  + resource "azurerm_network_security_group" "security_groups" {
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "kpmgquestion1-dev-webnsg-tf"
+      + resource_group_name = "kpmgquestion1-dev-rg-tf"
+      + security_rule       = [
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Outbound"
+              + name                                       = "Allow-outbound-all"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "10.0.1.0/24"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+          + {
+              + access                                     = "Allow"
+              + description                                = ""
+              + destination_address_prefix                 = "10.0.1.0/24"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "Allow-inbound-all"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "0.0.0.0/0"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+            },
+        ]
+    }
+
+  # module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg-subnet-association" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg-subnet-association" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"] will be created
+  + resource "azurerm_subnet_network_security_group_association" "nsg-subnet-association" {
+      + id                        = (known after apply)
+      + network_security_group_id = (known after apply)
+      + subnet_id                 = (known after apply)
+    }
+
+  # module.networking.azurerm_subnet.subnets["apptiersubnet"] will be created
+  + resource "azurerm_subnet" "subnets" {
+      + address_prefixes                               = [
+          + "10.0.2.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = false
+      + enforce_private_link_service_network_policies  = false
+      + id                                             = (known after apply)
+      + name                                           = "apptiersubnet"
+      + resource_group_name                            = "kpmgquestion1-dev-rg-tf"
+      + virtual_network_name                           = "kpmgquestion1-dev-vnet-tf"
+    }
+
+  # module.networking.azurerm_subnet.subnets["dbtiersubnet"] will be created
+  + resource "azurerm_subnet" "subnets" {
+      + address_prefixes                               = [
+          + "10.0.3.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = false
+      + enforce_private_link_service_network_policies  = false
+      + id                                             = (known after apply)
+      + name                                           = "dbtiersubnet"
+      + resource_group_name                            = "kpmgquestion1-dev-rg-tf"
+      + virtual_network_name                           = "kpmgquestion1-dev-vnet-tf"
+    }
+
+  # module.networking.azurerm_subnet.subnets["webtiersubnet"] will be created
+  + resource "azurerm_subnet" "subnets" {
+      + address_prefixes                               = [
+          + "10.0.1.0/24",
+        ]
+      + enforce_private_link_endpoint_network_policies = false
+      + enforce_private_link_service_network_policies  = false
+      + id                                             = (known after apply)
+      + name                                           = "webtiersubnet"
+      + resource_group_name                            = "kpmgquestion1-dev-rg-tf"
+      + virtual_network_name                           = "kpmgquestion1-dev-vnet-tf"
+    }
+
+  # module.networking.azurerm_virtual_network.az_vnet will be created
+  + resource "azurerm_virtual_network" "az_vnet" {
+      + address_space       = [
+          + "10.0.0.0/16",
+        ]
+      + dns_servers         = (known after apply)
+      + guid                = (known after apply)
+      + id                  = (known after apply)
+      + location            = "eastus"
+      + name                = "kpmgquestion1-dev-vnet-tf"
+      + resource_group_name = "kpmgquestion1-dev-rg-tf"
+      + subnet              = (known after apply)
+    }
+
+  # module.public_ip.azurerm_public_ip.az_public_ip will be created
+  + resource "azurerm_public_ip" "az_public_ip" {
+      + allocation_method       = "Dynamic"
+      + fqdn                    = (known after apply)
+      + id                      = (known after apply)
+      + idle_timeout_in_minutes = 4
+      + ip_address              = (known after apply)
+      + ip_version              = "IPv4"
+      + location                = "eastus"
+      + name                    = "kpmgquestion1-dev-publicIP-tf"
+      + resource_group_name     = "kpmgquestion1-dev-rg-tf"
+      + sku                     = "Basic"
+      + sku_tier                = "Regional"
+    }
+
+  # module.resourcegroup.azurerm_resource_group.azresourcegroup will be created
+  + resource "azurerm_resource_group" "azresourcegroup" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "kpmgquestion1-dev-rg-tf"
+    }
+
+Plan: 18 to add, 0 to change, 0 to destroy.
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Creating...
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Creation complete after 3s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf]
+module.networking.azurerm_virtual_network.az_vnet: Creating...
+module.public_ip.azurerm_public_ip.az_public_ip: Creating...
+module.database.azurerm_mysql_server.az_mysql_server: Creating...
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Creating...
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Creating...
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Creating...
+module.public_ip.azurerm_public_ip.az_public_ip: Creation complete after 9s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/publicIPAddresses/kpmgquestion1-dev-publicIP-tf]
+module.networking.azurerm_virtual_network.az_vnet: Still creating... [10s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Still creating... [10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Still creating... [10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Still creating... [10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Creation complete after 12s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-dbnsg-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Creation complete after 12s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-appnsg-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Creation complete after 12s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-webnsg-tf]
+module.networking.azurerm_virtual_network.az_vnet: Creation complete after 13s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Creating...
+module.networking.azurerm_subnet.subnets["webtiersubnet"]: Creating...
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Creating...
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [20s elapsed]
+module.networking.azurerm_subnet.subnets["webtiersubnet"]: Creation complete after 9s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Still creating... [10s elapsed]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Still creating... [10s elapsed]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Creation complete after 17s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [30s elapsed]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Still creating... [20s elapsed]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Creation complete after 26s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Creating...
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Creating...
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"]: Creating...
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"]: Creating...
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Creating...
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [40s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"]: Creation complete after 10s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Still creating... [10s elapsed]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Still creating... [10s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"]: Still creating... [10s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Still creating... [10s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [50s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"]: Creation complete after 19s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Still creating... [20s elapsed]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Still creating... [20s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Still creating... [20s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [1m0s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Creation complete after 28s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Still creating... [30s elapsed]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Still creating... [30s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [1m10s elapsed]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Creation complete after 34s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-appvm-tf-nic]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Creation complete after 39s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-webvm-tf-nic]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Creating...
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Creating...
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [1m20s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still creating... [10s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still creating... [10s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [1m30s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still creating... [20s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still creating... [20s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [1m40s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still creating... [30s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still creating... [30s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [1m50s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still creating... [40s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still creating... [40s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [2m0s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still creating... [50s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still creating... [50s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [2m10s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Creation complete after 56s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-webvm-tf]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Creation complete after 58s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-appvm-tf]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [2m20s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [2m30s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [2m40s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [2m50s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still creating... [3m0s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Creation complete after 3m9s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf]
+module.database.azurerm_mysql_database.example: Creating...
+module.database.azurerm_mysql_database.example: Still creating... [10s elapsed]
+module.database.azurerm_mysql_database.example: Still creating... [20s elapsed]
+module.database.azurerm_mysql_database.example: Creation complete after 21s [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf/databases/kpmgquestion1-dev-mysqldb-tf]
+
+Apply complete! Resources: 18 added, 0 changed, 0 destroyed.
+
+PS C:\Users\Jitender\Documents\KGS-coding-challenge-main\S1> ..\..\terraform.exe destroy
+var.mysql_db_pass
+  Enter a value: Jiten@1987
+
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf]
+module.networking.azurerm_virtual_network.az_vnet: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf]
+module.public_ip.azurerm_public_ip.az_public_ip: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/publicIPAddresses/kpmgquestion1-dev-publicIP-tf]
+module.database.azurerm_mysql_server.az_mysql_server: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-webnsg-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-dbnsg-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-appnsg-tf]
+module.database.azurerm_mysql_database.example: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf/databases/kpmgquestion1-dev-mysqldb-tf]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet]
+module.networking.azurerm_subnet.subnets["webtiersubnet"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-webvm-tf-nic]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-appvm-tf-nic]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-appvm-tf]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Refreshing state... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-webvm-tf]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"] will be destroyed
+  - resource "azurerm_linux_virtual_machine" "virtual_machines" {
+      - admin_username                  = "kpmguser" -> null
+      - allow_extension_operations      = true -> null
+      - computer_name                   = "kpmgquestion1-dev-appvm-tf" -> null
+      - disable_password_authentication = true -> null
+      - encryption_at_host_enabled      = false -> null
+      - extensions_time_budget          = "PT1H30M" -> null
+      - id                              = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-appvm-tf" -> null
+      - location                        = "eastus" -> null
+      - max_bid_price                   = -1 -> null
+      - name                            = "kpmgquestion1-dev-appvm-tf" -> null
+      - network_interface_ids           = [
+          - "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-appvm-tf-nic",
+        ] -> null
+      - patch_mode                      = "ImageDefault" -> null
+      - platform_fault_domain           = -1 -> null
+      - priority                        = "Regular" -> null
+      - private_ip_address              = "10.0.2.4" -> null
+      - private_ip_addresses            = [
+          - "10.0.2.4",
+        ] -> null
+      - provision_vm_agent              = true -> null
+      - public_ip_addresses             = [] -> null
+      - resource_group_name             = "kpmgquestion1-dev-rg-tf" -> null
+      - secure_boot_enabled             = false -> null
+      - size                            = "Standard_F2" -> null
+      - tags                            = {} -> null
+      - virtual_machine_id              = "32488dde-ab7e-4a35-a9d2-53b8f80ad361" -> null
+      - vtpm_enabled                    = false -> null
+
+      - admin_ssh_key {
+          - public_key = <<-EOT
+                ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAH86pAk0H+ZI71VoYoMwQ1PYJzeCho8UyJWoVilmhYZgOYRKWIH1WQusPIsqXd82/UBJ2+hQabh1FWgM0mbLjQVRM+PhQ8SwaVDOMlIAyQgARt7vUD4+VjMAm4MXn5lbOStxTbxLi39XIQIvncu/qnNqGGQgZA2Y5VWtztUsx4F0nEUIjrA4lZFAqsHJetrxfL1F0hqi6fhD+l24y++wgC89W0Oox6LC22BB1Q4XWAdTDhqllR1HObnmIEULi4DkjT5ntrfws3of9k2tKJI7eQ8RTqOol84uzKImDCS3CraHGiKdpv49IyRlGUg5jhvmwFNnLMvRmA6C8OGXvmcnwPoaGfobvGjccpAABcdyK62nH78lQObtjtr24Wgoz2FGxLiiFstOFPamkDhWcZfflmZSwGmIidE7M/OvOrePovn2EsPLSV1Te0VG/aQxLY78/MtvWvXOsAufAH0tf11hfMcjQjXTu9Qf7X7pc5TrJLMmvM/fug/CBqFPk07Rd/uM= ravi_prakash@Ravi
+            EOT -> null
+          - username   = "kpmguser" -> null
+        }
+
+      - os_disk {
+          - caching                   = "ReadWrite" -> null
+          - disk_size_gb              = 30 -> null
+          - name                      = "kpmgquestion1-dev-appvm-tf_OsDisk_1_3249c72f9fa2471e84274d34daaa5703" -> null
+          - storage_account_type      = "Standard_LRS" -> null
+          - write_accelerator_enabled = false -> null
+        }
+
+      - source_image_reference {
+          - offer     = "UbuntuServer" -> null
+          - publisher = "Canonical" -> null
+          - sku       = "16.04-LTS" -> null
+          - version   = "latest" -> null
+        }
+    }
+
+  # module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"] will be destroyed
+  - resource "azurerm_linux_virtual_machine" "virtual_machines" {
+      - admin_username                  = "kpmguser" -> null
+      - allow_extension_operations      = true -> null
+      - computer_name                   = "kpmgquestion1-dev-webvm-tf" -> null
+      - disable_password_authentication = true -> null
+      - encryption_at_host_enabled      = false -> null
+      - extensions_time_budget          = "PT1H30M" -> null
+      - id                              = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-webvm-tf" -> null
+      - location                        = "eastus" -> null
+      - max_bid_price                   = -1 -> null
+      - name                            = "kpmgquestion1-dev-webvm-tf" -> null
+      - network_interface_ids           = [
+          - "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-webvm-tf-nic",
+        ] -> null
+      - patch_mode                      = "ImageDefault" -> null
+      - platform_fault_domain           = -1 -> null
+      - priority                        = "Regular" -> null
+      - private_ip_address              = "10.0.1.4" -> null
+      - private_ip_addresses            = [
+          - "10.0.1.4",
+        ] -> null
+      - provision_vm_agent              = true -> null
+      - public_ip_address               = "4.246.151.114" -> null
+      - public_ip_addresses             = [
+          - "4.246.151.114",
+        ] -> null
+      - resource_group_name             = "kpmgquestion1-dev-rg-tf" -> null
+      - secure_boot_enabled             = false -> null
+      - size                            = "Standard_F2" -> null
+      - tags                            = {} -> null
+      - virtual_machine_id              = "1fd737d2-9a5f-461e-908e-3d9f650f3f11" -> null
+      - vtpm_enabled                    = false -> null
+
+      - admin_ssh_key {
+          - public_key = <<-EOT
+                ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAH86pAk0H+ZI71VoYoMwQ1PYJzeCho8UyJWoVilmhYZgOYRKWIH1WQusPIsqXd82/UBJ2+hQabh1FWgM0mbLjQVRM+PhQ8SwaVDOMlIAyQgARt7vUD4+VjMAm4MXn5lbOStxTbxLi39XIQIvncu/qnNqGGQgZA2Y5VWtztUsx4F0nEUIjrA4lZFAqsHJetrxfL1F0hqi6fhD+l24y++wgC89W0Oox6LC22BB1Q4XWAdTDhqllR1HObnmIEULi4DkjT5ntrfws3of9k2tKJI7eQ8RTqOol84uzKImDCS3CraHGiKdpv49IyRlGUg5jhvmwFNnLMvRmA6C8OGXvmcnwPoaGfobvGjccpAABcdyK62nH78lQObtjtr24Wgoz2FGxLiiFstOFPamkDhWcZfflmZSwGmIidE7M/OvOrePovn2EsPLSV1Te0VG/aQxLY78/MtvWvXOsAufAH0tf11hfMcjQjXTu9Qf7X7pc5TrJLMmvM/fug/CBqFPk07Rd/uM= ravi_prakash@Ravi
+            EOT -> null
+          - username   = "kpmguser" -> null
+        }
+
+      - os_disk {
+          - caching                   = "ReadWrite" -> null
+          - disk_size_gb              = 30 -> null
+          - name                      = "kpmgquestion1-dev-webvm-tf_OsDisk_1_c64bf12434404ed599ef1581ffc67da3" -> null
+          - storage_account_type      = "Standard_LRS" -> null
+          - write_accelerator_enabled = false -> null
+        }
+
+      - source_image_reference {
+          - offer     = "UbuntuServer" -> null
+          - publisher = "Canonical" -> null
+          - sku       = "16.04-LTS" -> null
+          - version   = "latest" -> null
+        }
+    }
+
+  # module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"] will be destroyed
+  - resource "azurerm_network_interface" "network_interface" {
+      - applied_dns_servers           = [] -> null
+      - dns_servers                   = [] -> null
+      - enable_accelerated_networking = false -> null
+      - enable_ip_forwarding          = false -> null
+      - id                            = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-appvm-tf-nic" -> null
+      - internal_domain_name_suffix   = "lgdrjjsg0pgehegamuxtum2zzh.bx.internal.cloudapp.net" -> null
+      - location                      = "eastus" -> null
+      - mac_address                   = "00-22-48-2E-36-A0" -> null
+      - name                          = "kpmgquestion1-dev-appvm-tf-nic" -> null
+      - private_ip_address            = "10.0.2.4" -> null
+      - private_ip_addresses          = [
+          - "10.0.2.4",
+        ] -> null
+      - resource_group_name           = "kpmgquestion1-dev-rg-tf" -> null
+      - tags                          = {} -> null
+      - virtual_machine_id            = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-appvm-tf" -> null
+
+      - ip_configuration {
+          - name                          = "app-server" -> null
+          - primary                       = true -> null
+          - private_ip_address            = "10.0.2.4" -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - private_ip_address_version    = "IPv4" -> null
+          - subnet_id                     = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet" -> null
+        }
+    }
+
+  # module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"] will be destroyed
+  - resource "azurerm_network_interface" "network_interface" {
+      - applied_dns_servers           = [] -> null
+      - dns_servers                   = [] -> null
+      - enable_accelerated_networking = false -> null
+      - enable_ip_forwarding          = false -> null
+      - id                            = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-webvm-tf-nic" -> null
+      - internal_domain_name_suffix   = "lgdrjjsg0pgehegamuxtum2zzh.bx.internal.cloudapp.net" -> null
+      - location                      = "eastus" -> null
+      - mac_address                   = "00-0D-3A-1D-64-A4" -> null
+      - name                          = "kpmgquestion1-dev-webvm-tf-nic" -> null
+      - private_ip_address            = "10.0.1.4" -> null
+      - private_ip_addresses          = [
+          - "10.0.1.4",
+        ] -> null
+      - resource_group_name           = "kpmgquestion1-dev-rg-tf" -> null
+      - tags                          = {} -> null
+      - virtual_machine_id            = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-webvm-tf" -> null
+
+      - ip_configuration {
+          - name                          = "web-server" -> null
+          - primary                       = true -> null
+          - private_ip_address            = "10.0.1.4" -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - private_ip_address_version    = "IPv4" -> null
+          - public_ip_address_id          = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/publicIPAddresses/kpmgquestion1-dev-publicIP-tf" -> null
+          - subnet_id                     = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet" -> null
+        }
+    }
+
+  # module.database.azurerm_mysql_database.example will be destroyed
+  - resource "azurerm_mysql_database" "example" {
+      - charset             = "utf8" -> null
+      - collation           = "utf8_unicode_ci" -> null
+      - id                  = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf/databases/kpmgquestion1-dev-mysqldb-tf" -> null
+      - name                = "kpmgquestion1-dev-mysqldb-tf" -> null
+      - resource_group_name = "kpmgquestion1-dev-rg-tf" -> null
+      - server_name         = "kpmgquestion1-dev-mysqldbserver-tf" -> null
+    }
+
+  # module.database.azurerm_mysql_server.az_mysql_server will be destroyed
+  - resource "azurerm_mysql_server" "az_mysql_server" {
+      - administrator_login               = "mysqladmin" -> null
+      - administrator_login_password      = (sensitive value) -> null
+      - auto_grow_enabled                 = true -> null
+      - backup_retention_days             = 7 -> null
+      - create_mode                       = "Default" -> null
+      - fqdn                              = "kpmgquestion1-dev-mysqldbserver-tf.mysql.database.azure.com" -> null
+      - geo_redundant_backup_enabled      = false -> null
+      - id                                = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf" -> null
+      - infrastructure_encryption_enabled = false -> null
+      - location                          = "eastus" -> null
+      - name                              = "kpmgquestion1-dev-mysqldbserver-tf" -> null
+      - public_network_access_enabled     = true -> null
+      - resource_group_name               = "kpmgquestion1-dev-rg-tf" -> null
+      - sku_name                          = "B_Gen5_2" -> null
+      - ssl_enforcement_enabled           = true -> null
+      - ssl_minimal_tls_version_enforced  = "TLS1_2" -> null
+      - storage_mb                        = 5120 -> null
+      - tags                              = {} -> null
+      - version                           = "5.7" -> null
+    }
+
+  # module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"] will be destroyed
+  - resource "azurerm_network_security_group" "security_groups" {
+      - id                  = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-appnsg-tf" -> null
+      - location            = "eastus" -> null
+      - name                = "kpmgquestion1-dev-appnsg-tf" -> null
+      - resource_group_name = "kpmgquestion1-dev-rg-tf" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.1.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "Allow-outbound-web-all"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.2.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.2.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "Allow-inbound-db-all"
+              - priority                                   = 101
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.3.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.2.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "Allow-inbound-web-all"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.1.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.3.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "Allow-outbound-db-all"
+              - priority                                   = 101
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.2.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"] will be destroyed
+  - resource "azurerm_network_security_group" "security_groups" {
+      - id                  = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-dbnsg-tf" -> null
+      - location            = "eastus" -> null
+      - name                = "kpmgquestion1-dev-dbnsg-tf" -> null
+      - resource_group_name = "kpmgquestion1-dev-rg-tf" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.2.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "Allow-outbound-app-all"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.3.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.3.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "Allow-inbound-app-all"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.2.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"] will be destroyed
+  - resource "azurerm_network_security_group" "security_groups" {
+      - id                  = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-webnsg-tf" -> null
+      - location            = "eastus" -> null
+      - name                = "kpmgquestion1-dev-webnsg-tf" -> null
+      - resource_group_name = "kpmgquestion1-dev-rg-tf" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Outbound"
+              - name                                       = "Allow-outbound-all"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "10.0.1.0/24"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "10.0.1.0/24"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "*"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "Allow-inbound-all"
+              - priority                                   = 100
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "0.0.0.0/0"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg-subnet-association" {
+      - id                        = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet" -> null
+      - network_security_group_id = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-appnsg-tf" -> null
+      - subnet_id                 = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet" -> null
+    }
+
+  # module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg-subnet-association" {
+      - id                        = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet" -> null
+      - network_security_group_id = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-dbnsg-tf" -> null
+      - subnet_id                 = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet" -> null
+    }
+
+  # module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"] will be destroyed
+  - resource "azurerm_subnet_network_security_group_association" "nsg-subnet-association" {
+      - id                        = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet" -> null
+      - network_security_group_id = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-webnsg-tf" -> null
+      - subnet_id                 = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet" -> null
+    }
+
+  # module.networking.azurerm_subnet.subnets["apptiersubnet"] will be destroyed
+  - resource "azurerm_subnet" "subnets" {
+      - address_prefixes                               = [
+          - "10.0.2.0/24",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = false -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet" -> null
+      - name                                           = "apptiersubnet" -> null
+      - resource_group_name                            = "kpmgquestion1-dev-rg-tf" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "kpmgquestion1-dev-vnet-tf" -> null
+    }
+
+  # module.networking.azurerm_subnet.subnets["dbtiersubnet"] will be destroyed
+  - resource "azurerm_subnet" "subnets" {
+      - address_prefixes                               = [
+          - "10.0.3.0/24",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = false -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet" -> null
+      - name                                           = "dbtiersubnet" -> null
+      - resource_group_name                            = "kpmgquestion1-dev-rg-tf" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "kpmgquestion1-dev-vnet-tf" -> null
+    }
+
+  # module.networking.azurerm_subnet.subnets["webtiersubnet"] will be destroyed
+  - resource "azurerm_subnet" "subnets" {
+      - address_prefixes                               = [
+          - "10.0.1.0/24",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = false -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet" -> null
+      - name                                           = "webtiersubnet" -> null
+      - resource_group_name                            = "kpmgquestion1-dev-rg-tf" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "kpmgquestion1-dev-vnet-tf" -> null
+    }
+
+  # module.networking.azurerm_virtual_network.az_vnet will be destroyed
+  - resource "azurerm_virtual_network" "az_vnet" {
+      - address_space           = [
+          - "10.0.0.0/16",
+        ] -> null
+      - dns_servers             = [] -> null
+      - flow_timeout_in_minutes = 0 -> null
+      - guid                    = "a6148759-d346-43cc-90c0-652f3a3399cf" -> null
+      - id                      = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf" -> null
+      - location                = "eastus" -> null
+      - name                    = "kpmgquestion1-dev-vnet-tf" -> null
+      - resource_group_name     = "kpmgquestion1-dev-rg-tf" -> null
+      - subnet                  = [
+          - {
+              - address_prefix = "10.0.1.0/24"
+              - id             = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet"
+              - name           = "webtiersubnet"
+              - security_group = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-webnsg-tf"
+            },
+          - {
+              - address_prefix = "10.0.2.0/24"
+              - id             = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet"
+              - name           = "apptiersubnet"
+              - security_group = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-appnsg-tf"
+            },
+          - {
+              - address_prefix = "10.0.3.0/24"
+              - id             = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet"
+              - name           = "dbtiersubnet"
+              - security_group = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-dbnsg-tf"
+            },
+        ] -> null
+      - tags                    = {} -> null
+    }
+
+  # module.public_ip.azurerm_public_ip.az_public_ip will be destroyed
+  - resource "azurerm_public_ip" "az_public_ip" {
+      - allocation_method       = "Dynamic" -> null
+      - id                      = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/publicIPAddresses/kpmgquestion1-dev-publicIP-tf" -> null
+      - idle_timeout_in_minutes = 4 -> null
+      - ip_address              = "4.246.151.114" -> null
+      - ip_tags                 = {} -> null
+      - ip_version              = "IPv4" -> null
+      - location                = "eastus" -> null
+      - name                    = "kpmgquestion1-dev-publicIP-tf" -> null
+      - resource_group_name     = "kpmgquestion1-dev-rg-tf" -> null
+      - sku                     = "Basic" -> null
+      - sku_tier                = "Regional" -> null
+      - tags                    = {} -> null
+      - zones                   = [] -> null
+    }
+
+  # module.resourcegroup.azurerm_resource_group.azresourcegroup will be destroyed
+  - resource "azurerm_resource_group" "azresourcegroup" {
+      - id       = "/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf" -> null
+      - location = "eastus" -> null
+      - name     = "kpmgquestion1-dev-rg-tf" -> null
+      - tags     = {} -> null
+    }
+
+Plan: 0 to add, 0 to change, 18 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+module.database.azurerm_mysql_database.example: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf/databases/kpmgquestion1-dev-mysqldb-tf]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-appvm-tf]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Compute/virtualMachines/kpmgquestion1-dev-webvm-tf]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["db-subnet-association"]: Destruction complete after 8s
+module.database.azurerm_mysql_database.example: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...databases/kpmgquestion1-dev-mysqldb-tf, 10s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-webvm-tf, 10s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ion1-dev-vnet-tf/subnets/apptiersubnet, 10s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-appvm-tf, 10s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ion1-dev-vnet-tf/subnets/webtiersubnet, 10s elapsed]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["web-subnet-association"]: Destruction complete after 14s
+module.database.azurerm_mysql_database.example: Destruction complete after 17s
+module.database.azurerm_mysql_server.az_mysql_server: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.DBforMySQL/servers/kpmgquestion1-dev-mysqldbserver-tf]
+module.network_security_group.azurerm_subnet_network_security_group_association.nsg-subnet-association["app-subnet-association"]: Destruction complete after 20s
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-dbnsg-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-webnsg-tf]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkSecurityGroups/kpmgquestion1-dev-appnsg-tf]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-webvm-tf, 20s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-appvm-tf, 20s elapsed]
+module.database.azurerm_mysql_server.az_mysql_server: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ers/kpmgquestion1-dev-mysqldbserver-tf, 10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...rityGroups/kpmgquestion1-dev-appnsg-tf, 10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...rityGroups/kpmgquestion1-dev-webnsg-tf, 10s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...urityGroups/kpmgquestion1-dev-dbnsg-tf, 10s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-appvm-tf, 30s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-webvm-tf, 30s elapsed]
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-dbnsg-tf"]: Destruction complete after 12s
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-webnsg-tf"]: Destruction complete after 12s
+module.network_security_group.azurerm_network_security_group.security_groups["kpmgquestion1-dev-appnsg-tf"]: Destruction complete after 13s
+module.database.azurerm_mysql_server.az_mysql_server: Destruction complete after 20s
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-appvm-tf, 40s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-webvm-tf, 40s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-appvm-tf, 50s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ualMachines/kpmgquestion1-dev-webvm-tf, 50s elapsed]
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-appvm-tf"]: Destruction complete after 55s
+module.compute.azurerm_linux_virtual_machine.virtual_machines["kpmgquestion1-dev-webvm-tf"]: Destruction complete after 1m0s
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-webvm-tf-nic]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/networkInterfaces/kpmgquestion1-dev-appvm-tf-nic]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-appvm-tf-nic"]: Destruction complete after 8s
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...erfaces/kpmgquestion1-dev-webvm-tf-nic, 10s elapsed]
+module.compute.azurerm_network_interface.network_interface["kpmgquestion1-dev-webvm-tf-nic"]: Destruction complete after 14s
+module.networking.azurerm_subnet.subnets["webtiersubnet"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/webtiersubnet]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/dbtiersubnet]
+module.public_ip.azurerm_public_ip.az_public_ip: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/publicIPAddresses/kpmgquestion1-dev-publicIP-tf]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf/subnets/apptiersubnet]
+module.networking.azurerm_subnet.subnets["webtiersubnet"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ion1-dev-vnet-tf/subnets/webtiersubnet, 10s elapsed]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...tion1-dev-vnet-tf/subnets/dbtiersubnet, 10s elapsed]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ion1-dev-vnet-tf/subnets/apptiersubnet, 10s elapsed]
+module.public_ip.azurerm_public_ip.az_public_ip: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ddresses/kpmgquestion1-dev-publicIP-tf, 10s elapsed]
+module.networking.azurerm_subnet.subnets["webtiersubnet"]: Destruction complete after 12s
+module.public_ip.azurerm_public_ip.az_public_ip: Destruction complete after 12s
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...ion1-dev-vnet-tf/subnets/apptiersubnet, 20s elapsed]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...tion1-dev-vnet-tf/subnets/dbtiersubnet, 20s elapsed]
+module.networking.azurerm_subnet.subnets["apptiersubnet"]: Destruction complete after 24s
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...tion1-dev-vnet-tf/subnets/dbtiersubnet, 30s elapsed]
+module.networking.azurerm_subnet.subnets["dbtiersubnet"]: Destruction complete after 36s
+module.networking.azurerm_virtual_network.az_vnet: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf/providers/Microsoft.Network/virtualNetworks/kpmgquestion1-dev-vnet-tf]
+module.networking.azurerm_virtual_network.az_vnet: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...tualNetworks/kpmgquestion1-dev-vnet-tf, 10s elapsed]
+module.networking.azurerm_virtual_network.az_vnet: Destruction complete after 13s
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad/resourceGroups/kpmgquestion1-dev-rg-tf]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...resourceGroups/kpmgquestion1-dev-rg-tf, 10s elapsed]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...resourceGroups/kpmgquestion1-dev-rg-tf, 20s elapsed]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...resourceGroups/kpmgquestion1-dev-rg-tf, 30s elapsed]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...resourceGroups/kpmgquestion1-dev-rg-tf, 40s elapsed]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...resourceGroups/kpmgquestion1-dev-rg-tf, 50s elapsed]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Still destroying... [id=/subscriptions/5c265d3c-ff46-4102-8c22-...resourceGroups/kpmgquestion1-dev-rg-tf, 1m0s elapsed]
+module.resourcegroup.azurerm_resource_group.azresourcegroup: Destruction complete after 1m7s
+
+Destroy complete! Resources: 18 destroyed.
+
