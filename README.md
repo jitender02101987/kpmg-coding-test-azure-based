@@ -1,2 +1,7 @@
-# kpmg-coding-test-azure-based
-KPMG coding test solutions azure based
+This repository contains the KPMG coding question solutions
+
+S1 contains solution for Q1.
+
+S2 contains solution for Q2.
+
+S3 contains solution for Q3.
