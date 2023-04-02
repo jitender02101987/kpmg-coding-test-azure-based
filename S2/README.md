@@ -20,6 +20,7 @@ Result:
 --------
     
 1. Passing 2 mandatory parameters
+
     :~#./getMetaDataKeyVirtualMachine.sh kpmgquestion1-dev-appvm-tf kpmgquestion1-dev-rg-tf  
       
     Metadata of virtual machine kpmgquestion1-dev-appvm-tf as key is not passed:{
