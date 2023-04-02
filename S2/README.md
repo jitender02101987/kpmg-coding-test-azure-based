@@ -10,7 +10,7 @@ This solution is for fetching meta-data of virtual machine's key passed
 Usage:
 --------
 
-getMetaDataKeyComputeEngine.sh requires 2 mandatory parameters and one optional parameter. This optional parameter will used when you want to fetch the value for particular key from virtual machine's metdata
+getMetaDataKeyVirtualMachine.sh requires 2 mandatory parameters and one optional parameter. This optional parameter will used when you want to fetch the value for particular key from virtual machine's metdata
 
     virtualmachinename  - Name of the instance for which metadata is required for
     resourcegroup   - name of the project where the instance exists
