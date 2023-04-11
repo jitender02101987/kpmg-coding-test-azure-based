@@ -9,6 +9,7 @@ This solution is for creating a 3-tier application architecture using terraform 
 Usage:
 --------
 ```
+export ARM_CLIENT_SECRET="XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ./terraform.exe init
 ./terraform.exe plan --var="mysql_db_pass=Jiten@1987"
 ./terraform.exe apply --var="mysql_db_pass=Jiten@1987" --auto-approve
