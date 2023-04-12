@@ -9,6 +9,7 @@ This solution is for creating a 3-tier application architecture using terraform 
 Usage:
 --------
 ```
+az ad sp create-for-rbac --name "SPForTerraformKpmgTest" --role "Contributor" --scopes="/subscriptions/5c265d3c-ff46-4102-8c22-6ea6615689ad"
 export ARM_CLIENT_SECRET="XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ./terraform.exe init
 ./terraform.exe plan --var="mysql_db_pass=Jiten@1987"
